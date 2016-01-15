@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     appName.backgroundColor = UIColor.blackColor()
     appName.textAlignment = .Center
     appName.font = UIFont.init(name: "HelveticaNeue-UltraLight", size: 40)
-    appName.text = "Boxee Remote for iOS"
+    appName.text = "Boxee Remote"
     appName.textColor = UIColor.whiteColor()
 
     view.addSubview(appName)
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         "position": 6,
         "button": UIButton(type: .System)
       ],
-      "PLAY/PAUSE": [
+      "PAUSE": [
         "position": 8,
         "button": UIButton(type: .System)
       ],
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         "position": 0,
         "button": UIButton(type: .System)
       ],
-      "FAST FORWARD": [
+      "FF": [
         "position": 2,
         "button": UIButton(type: .System)
       ]
@@ -157,6 +157,7 @@ class ViewController: UIViewController {
       })
     }
 
+    // NOTE: This triggers after 1/10th of a second.
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 100_000_000), dispatch_get_main_queue(), { () -> Void in
       self.notification.text = ""
       self.notification.textColor = UIColor.blackColor()
